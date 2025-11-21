@@ -1,31 +1,42 @@
-package com.bian.animalformsbian.domain.model;
+package com.bian.animalformsbian.adapter.driving.http.dto.request;
+
+import com.bian.animalformsbian.adapter.driving.http.dto.CategoriesDto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 import java.util.Map;
 
-public class AnimalWelfareEvaluation {
-    private String id;
+public class AnimalWelfareEvaluationRequestDto {
+    @JsonProperty("user_id")
     private String userId;
+    @JsonProperty("evaluation_id")
     private String evaluationId;
+    @JsonProperty("evaluation_date")
     private String evaluationDate;
     private String language;
     private String species;
+    @JsonProperty("farm_name")
     private String farmName;
+    @JsonProperty("farm_location")
     private String farmLocation;
+    @JsonProperty("evaluator_name")
     private String evaluatorName;
     private String status;
+    @JsonProperty("overall_score")
     private String overallScore;
+    @JsonProperty("compliance_level")
     private String complianceLevel;
-    private Categories categories;
+    private CategoriesDto categories;
+    @JsonProperty("critical_points")
     private List<Map<String, String>> criticalPoints;
+    @JsonProperty("strong_points")
     private List<Map<String, String>> strongPoints;
     private List<String> recommendations;
 
-    public AnimalWelfareEvaluation() {
+    public AnimalWelfareEvaluationRequestDto() {
     }
 
-    public AnimalWelfareEvaluation(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, Categories categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
-        this.id = id;
+    public AnimalWelfareEvaluationRequestDto(String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.userId = userId;
         this.evaluationId = evaluationId;
         this.evaluationDate = evaluationDate;
@@ -41,14 +52,6 @@ public class AnimalWelfareEvaluation {
         this.criticalPoints = criticalPoints;
         this.strongPoints = strongPoints;
         this.recommendations = recommendations;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getUserId() {
@@ -139,11 +142,11 @@ public class AnimalWelfareEvaluation {
         this.complianceLevel = complianceLevel;
     }
 
-    public Categories getCategories() {
+    public CategoriesDto getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
+    public void setCategories(CategoriesDto categories) {
         this.categories = categories;
     }
 

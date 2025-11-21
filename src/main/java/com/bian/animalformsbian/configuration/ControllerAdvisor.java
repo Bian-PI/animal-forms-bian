@@ -1,5 +1,6 @@
 package com.bian.animalformsbian.configuration;
 
+import com.bian.animalformsbian.adapter.driven.mongo.exception.NoDataFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -9,7 +10,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+
+import static com.bian.animalformsbian.configuration.Constants.NO_DATA_FOUND_MESSAGE;
+import static com.bian.animalformsbian.configuration.Constants.RESPONSE_ERROR_MESSAGE_KEY;
 
 @ControllerAdvice
 public class ControllerAdvisor {
@@ -26,5 +32,11 @@ public class ControllerAdvisor {
             }
         }
         return new ResponseEntity<>(errorMessages, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(NoDataFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNoDataFoundException(NoDataFoundException noDataFoundException) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, NO_DATA_FOUND_MESSAGE));
     }
 }

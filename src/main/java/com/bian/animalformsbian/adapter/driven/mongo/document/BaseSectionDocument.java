@@ -1,14 +1,14 @@
-package com.bian.animalformsbian.domain.model;
+package com.bian.animalformsbian.adapter.driven.mongo.document;
 
 import java.util.Map;
 
-public abstract class BaseSection {
+public abstract class BaseSectionDocument {
     private String score;
     private Map<String, String> responses;
 
-    public BaseSection() {}
+    public BaseSectionDocument() {}
 
-    public BaseSection(String score, Map<String, String> responses) {
+    public BaseSectionDocument(String score, Map<String, String> responses) {
         this.score = score;
         this.responses = responses;
     }

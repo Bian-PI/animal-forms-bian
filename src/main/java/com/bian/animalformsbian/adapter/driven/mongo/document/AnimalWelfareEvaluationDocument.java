@@ -1,9 +1,14 @@
-package com.bian.animalformsbian.domain.model;
+package com.bian.animalformsbian.adapter.driven.mongo.document;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 import java.util.Map;
 
-public class AnimalWelfareEvaluation {
+@Document(collection = "animal_welfare_evaluations")
+public class AnimalWelfareEvaluationDocument {
+    @Id
     private String id;
     private String userId;
     private String evaluationId;
@@ -16,15 +21,15 @@ public class AnimalWelfareEvaluation {
     private String status;
     private String overallScore;
     private String complianceLevel;
-    private Categories categories;
+    private CategoriesDocument categories;
     private List<Map<String, String>> criticalPoints;
     private List<Map<String, String>> strongPoints;
     private List<String> recommendations;
 
-    public AnimalWelfareEvaluation() {
+    public AnimalWelfareEvaluationDocument() {
     }
 
-    public AnimalWelfareEvaluation(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, Categories categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationDocument(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDocument categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.id = id;
         this.userId = userId;
         this.evaluationId = evaluationId;
@@ -139,11 +144,11 @@ public class AnimalWelfareEvaluation {
         this.complianceLevel = complianceLevel;
     }
 
-    public Categories getCategories() {
+    public CategoriesDocument getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
+    public void setCategories(CategoriesDocument categories) {
         this.categories = categories;
     }
 

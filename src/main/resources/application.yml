@@ -1,0 +1,9 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: animal-forms-bian
+  data:
+    mongodb:
+      uri: ${DB_URL}

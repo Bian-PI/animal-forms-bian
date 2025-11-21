@@ -1,14 +1,14 @@
-package com.bian.animalformsbian.domain.model;
+package com.bian.animalformsbian.adapter.driving.http.dto;
 
 import java.util.Map;
 
-public abstract class BaseSection {
+public abstract class BaseSectionDto {
     private String score;
     private Map<String, String> responses;
 
-    public BaseSection() {}
+    public BaseSectionDto() {}
 
-    public BaseSection(String score, Map<String, String> responses) {
+    public BaseSectionDto(String score, Map<String, String> responses) {
         this.score = score;
         this.responses = responses;
     }

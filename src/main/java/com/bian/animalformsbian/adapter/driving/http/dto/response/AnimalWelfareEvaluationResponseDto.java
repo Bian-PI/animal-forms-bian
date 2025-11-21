@@ -1,9 +1,11 @@
-package com.bian.animalformsbian.domain.model;
+package com.bian.animalformsbian.adapter.driving.http.dto.response;
+
+import com.bian.animalformsbian.adapter.driving.http.dto.CategoriesDto;
 
 import java.util.List;
 import java.util.Map;
 
-public class AnimalWelfareEvaluation {
+public class AnimalWelfareEvaluationResponseDto {
     private String id;
     private String userId;
     private String evaluationId;
@@ -16,15 +18,15 @@ public class AnimalWelfareEvaluation {
     private String status;
     private String overallScore;
     private String complianceLevel;
-    private Categories categories;
+    private CategoriesDto categories;
     private List<Map<String, String>> criticalPoints;
     private List<Map<String, String>> strongPoints;
     private List<String> recommendations;
 
-    public AnimalWelfareEvaluation() {
+    public AnimalWelfareEvaluationResponseDto() {
     }
 
-    public AnimalWelfareEvaluation(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, Categories categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationResponseDto(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.id = id;
         this.userId = userId;
         this.evaluationId = evaluationId;
@@ -139,11 +141,11 @@ public class AnimalWelfareEvaluation {
         this.complianceLevel = complianceLevel;
     }
 
-    public Categories getCategories() {
+    public CategoriesDto getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
+    public void setCategories(CategoriesDto categories) {
         this.categories = categories;
     }
 
