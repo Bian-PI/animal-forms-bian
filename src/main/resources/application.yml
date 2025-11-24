@@ -57,6 +57,8 @@ feign:
         connectTimeout: 30000  # Aumentado de 10s a 30s
         readTimeout: 30000     # Aumentado de 10s a 30s
         loggerLevel: FULL
+      user-bian:
+        url: ${USER_SERVICE_URL}
   circuitbreaker:
     enabled: true
 
