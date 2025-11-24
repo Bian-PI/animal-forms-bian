@@ -41,7 +41,7 @@ public class AnimalController {
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<List<AnimalWelfareEvaluationResponseDto>> getReportsForAdmins(@PathVariable("id") String id) {
+    public ResponseEntity<List<AnimalWelfareEvaluationResponseDto>> getReportsForAdmins(@PathVariable("id") Long id) {
         return new ResponseEntity<>(animalHandler.getReportsForAdmins(id), HttpStatus.OK);
     }
 }

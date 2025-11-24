@@ -8,6 +8,6 @@ import java.util.List;
 public interface IAnimalHandler {
     void createReport(AnimalWelfareEvaluationRequestDto animalWelfareEvaluationRequestDto);
     List<AnimalWelfareEvaluationResponseDto> getReports(String userId);
-    List<AnimalWelfareEvaluationResponseDto> getReportsForAdmins(String userId);
+    List<AnimalWelfareEvaluationResponseDto> getReportsForAdmins(Long userId);
     AnimalWelfareEvaluationResponseDto getReport(String id);
 }

@@ -34,8 +34,8 @@ public class AnimalEvaluationMongoAdapter implements IAnimalPersistencePort {
     }
 
     @Override
-    public List<AnimalWelfareEvaluation> getReportsForAdmins(String userId) {
-        List<AnimalWelfareEvaluationDocument> evaluationDocuments = repository.findByUserId(userId);
+    public List<AnimalWelfareEvaluation> getReportsForAdmins() {
+        List<AnimalWelfareEvaluationDocument> evaluationDocuments = repository.findAll();
         if (evaluationDocuments.isEmpty()) throw new NoDataFoundException();
 
         return animalDocumentMapper.toAnimalEvaluationList(evaluationDocuments);

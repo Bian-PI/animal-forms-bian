@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 public class AnimalWelfareEvaluationRequestDto {
+    @JsonProperty("connection_status")
+    private String connectionStatus;
     @JsonProperty("user_id")
     private String userId;
-    @JsonProperty("evaluation_id")
-    private String evaluationId;
     @JsonProperty("evaluation_date")
     private String evaluationDate;
     private String language;
@@ -36,9 +36,9 @@ public class AnimalWelfareEvaluationRequestDto {
     public AnimalWelfareEvaluationRequestDto() {
     }
 
-    public AnimalWelfareEvaluationRequestDto(String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationRequestDto(String connectionStatus, String userId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+        this.connectionStatus = connectionStatus;
         this.userId = userId;
-        this.evaluationId = evaluationId;
         this.evaluationDate = evaluationDate;
         this.language = language;
         this.species = species;
@@ -54,20 +54,20 @@ public class AnimalWelfareEvaluationRequestDto {
         this.recommendations = recommendations;
     }
 
+    public String getConnectionStatus() {
+        return connectionStatus;
+    }
+
+    public void setConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getEvaluationId() {
-        return evaluationId;
-    }
-
-    public void setEvaluationId(String evaluationId) {
-        this.evaluationId = evaluationId;
     }
 
     public String getEvaluationDate() {

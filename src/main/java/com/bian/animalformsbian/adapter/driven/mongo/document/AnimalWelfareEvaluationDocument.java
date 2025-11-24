@@ -10,8 +10,8 @@ import java.util.Map;
 public class AnimalWelfareEvaluationDocument {
     @Id
     private String id;
+    private String connectionStatus;
     private String userId;
-    private String evaluationId;
     private String evaluationDate;
     private String language;
     private String species;
@@ -29,10 +29,10 @@ public class AnimalWelfareEvaluationDocument {
     public AnimalWelfareEvaluationDocument() {
     }
 
-    public AnimalWelfareEvaluationDocument(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDocument categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationDocument(String id, String connectionStatus, String userId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDocument categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.id = id;
+        this.connectionStatus = connectionStatus;
         this.userId = userId;
-        this.evaluationId = evaluationId;
         this.evaluationDate = evaluationDate;
         this.language = language;
         this.species = species;
@@ -56,20 +56,20 @@ public class AnimalWelfareEvaluationDocument {
         this.id = id;
     }
 
+    public String getConnectionStatus() {
+        return connectionStatus;
+    }
+
+    public void setConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getEvaluationId() {
-        return evaluationId;
-    }
-
-    public void setEvaluationId(String evaluationId) {
-        this.evaluationId = evaluationId;
     }
 
     public String getEvaluationDate() {

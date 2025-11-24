@@ -10,4 +10,5 @@ public class Constants {
 
     public static final String NO_DATA_FOUND_MESSAGE = "Registros no encontrados.";
     public static final String REPORT_CREATED_MESSAGE = "Registro creado correctamente.";
+    public static final String ROLE_NOT_ALLOWED_MESSAGE = "No tiene permisos de administrador.";
 }

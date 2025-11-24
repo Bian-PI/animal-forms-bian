@@ -24,8 +24,8 @@ public class AnimalUseCase implements IAnimalServicePort {
     }
 
     @Override
-    public List<AnimalWelfareEvaluation> getReportsForAdmins(String userId) {
-        return animalPersistencePort.getReportsForAdmins(userId);
+    public List<AnimalWelfareEvaluation> getReportsForAdmins() {
+        return animalPersistencePort.getReportsForAdmins();
     }
 
     @Override
