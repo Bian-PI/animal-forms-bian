@@ -7,6 +7,6 @@ import java.util.List;
 public interface IAnimalServicePort {
     void createReport(AnimalWelfareEvaluation animalWelfareEvaluation);
     List<AnimalWelfareEvaluation> getReports(String userId);
-    List<AnimalWelfareEvaluation> getReportsForAdmins();
+    List<AnimalWelfareEvaluation> getReportsForAdmins(Long id);
     AnimalWelfareEvaluation getReport(String id);
 }
