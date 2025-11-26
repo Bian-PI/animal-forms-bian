@@ -21,10 +21,11 @@ public class AnimalUseCase implements IAnimalServicePort {
     @Override
     public void createReport(AnimalWelfareEvaluation animalWelfareEvaluation) {
         if (STATUS_OFFLINE.equals(animalWelfareEvaluation.getConnectionStatus())) {
-            animalWelfareEvaluation.setUserId(
-                    userServicePort.getUserIdByDocument(
-                            animalWelfareEvaluation.getUserId()
-                    ));
+            String realUserId = userServicePort.getUserIdByDocument(animalWelfareEvaluation.getUserId());
+
+            if (realUserId != null) {
+                animalWelfareEvaluation.setUserId(realUserId);
+            }
         }
 
         animalPersistencePort.createReport(animalWelfareEvaluation);
