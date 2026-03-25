@@ -10,6 +10,7 @@ public class AnimalWelfareEvaluation {
     private String evaluationDate;
     private String language;
     private String species;
+    private String productionType;
     private String farmName;
     private String farmLocation;
     private String evaluatorName;
@@ -24,13 +25,14 @@ public class AnimalWelfareEvaluation {
     public AnimalWelfareEvaluation() {
     }
 
-    public AnimalWelfareEvaluation(String id, String connectionStatus, String userId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, Categories categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluation(String id, String connectionStatus, String userId, String evaluationDate, String language, String species, String productionType, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, Categories categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.id = id;
         this.connectionStatus = connectionStatus;
         this.userId = userId;
         this.evaluationDate = evaluationDate;
         this.language = language;
         this.species = species;
+        this.productionType = productionType;
         this.farmName = farmName;
         this.farmLocation = farmLocation;
         this.evaluatorName = evaluatorName;
@@ -85,6 +87,14 @@ public class AnimalWelfareEvaluation {
 
     public String getSpecies() {
         return species;
+    }
+
+    public String getProductionType() {
+        return productionType;
+    }
+
+    public void setProductionType(String productionType) {
+        this.productionType = productionType;
     }
 
     public void setSpecies(String species) {

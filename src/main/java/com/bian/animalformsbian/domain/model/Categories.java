@@ -1,53 +1,40 @@
 package com.bian.animalformsbian.domain.model;
 
 public class Categories {
-    private Feeding feeding;
-    private Health health;
-    private Behavior behavior;
-    private Infrastructure infrastructure;
+    private Resource resource;
+    private Animal animal;
     private Management management;
+
+    //Categorias para porcinos
+    private Transport transport;
+    private Slaughter slaughter;
+
 
     public Categories() {
     }
 
-    public Categories(Feeding feeding, Health health, Behavior behavior, Infrastructure infrastructure, Management management) {
-        this.feeding = feeding;
-        this.health = health;
-        this.behavior = behavior;
-        this.infrastructure = infrastructure;
+    public Categories(Resource resource, Animal animal, Management management, Transport transport, Slaughter slaughter) {
+        this.resource = resource;
+        this.animal = animal;
         this.management = management;
+        this.transport = transport;
+        this.slaughter = slaughter;
     }
 
-    public Feeding getFeeding() {
-        return feeding;
+    public Resource getResource() {
+        return resource;
     }
 
-    public void setFeeding(Feeding feeding) {
-        this.feeding = feeding;
+    public void setResource(Resource resource) {
+        this.resource = resource;
     }
 
-    public Health getHealth() {
-        return health;
+    public Animal getAnimal() {
+        return animal;
     }
 
-    public void setHealth(Health health) {
-        this.health = health;
-    }
-
-    public Behavior getBehavior() {
-        return behavior;
-    }
-
-    public void setBehavior(Behavior behavior) {
-        this.behavior = behavior;
-    }
-
-    public Infrastructure getInfrastructure() {
-        return infrastructure;
-    }
-
-    public void setInfrastructure(Infrastructure infrastructure) {
-        this.infrastructure = infrastructure;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
     public Management getManagement() {
@@ -56,5 +43,21 @@ public class Categories {
 
     public void setManagement(Management management) {
         this.management = management;
+    }
+
+    public Transport getTransport() {
+        return transport;
+    }
+
+    public void setTransport(Transport transport) {
+        this.transport = transport;
+    }
+
+    public Slaughter getSlaughter() {
+        return slaughter;
+    }
+
+    public void setSlaughter(Slaughter slaughter) {
+        this.slaughter = slaughter;
     }
 }
