@@ -6,7 +6,7 @@ public class ManagementDocument extends BaseSectionDocument {
     public ManagementDocument() {
     }
 
-    public ManagementDocument(String score, Map<String, String> responses) {
-        super(score, responses);
+    public ManagementDocument(String score, String weight, Map<String, String> responses) {
+        super(score, weight, responses);
     }
 }

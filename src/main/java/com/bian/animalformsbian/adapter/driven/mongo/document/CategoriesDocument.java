@@ -1,60 +1,62 @@
 package com.bian.animalformsbian.adapter.driven.mongo.document;
 
 public class CategoriesDocument {
-    private FeedingDocument feeding;
-    private HealthDocument health;
-    private BehaviorDocument behavior;
-    private InfrastructureDocument infrastructure;
+    private ResourcesDocument resources;
+    private AnimalDocument animal;
     private ManagementDocument management;
+
+    //Categorias para porcinos
+    private TransportDocument behavior;
+    private SlaughterDocument infrastructure;
 
     public CategoriesDocument() {
     }
 
-    public CategoriesDocument(FeedingDocument feedingDocument, HealthDocument healthDocument, BehaviorDocument behaviorDocument, InfrastructureDocument infrastructureDocument, ManagementDocument managementDocument) {
-        this.feeding = feedingDocument;
-        this.health = healthDocument;
-        this.behavior = behaviorDocument;
-        this.infrastructure = infrastructureDocument;
-        this.management = managementDocument;
+    public CategoriesDocument(ResourcesDocument resources, AnimalDocument animal, ManagementDocument management, TransportDocument behavior, SlaughterDocument infrastructure) {
+        this.resources = resources;
+        this.animal = animal;
+        this.management = management;
+        this.behavior = behavior;
+        this.infrastructure = infrastructure;
     }
 
-    public FeedingDocument getFeeding() {
-        return feeding;
+    public ResourcesDocument getResources() {
+        return resources;
     }
 
-    public void setFeeding(FeedingDocument feedingDocument) {
-        this.feeding = feedingDocument;
+    public void setResources(ResourcesDocument resources) {
+        this.resources = resources;
     }
 
-    public HealthDocument getHealth() {
-        return health;
+    public AnimalDocument getAnimal() {
+        return animal;
     }
 
-    public void setHealth(HealthDocument healthDocument) {
-        this.health = healthDocument;
-    }
-
-    public BehaviorDocument getBehavior() {
-        return behavior;
-    }
-
-    public void setBehavior(BehaviorDocument behaviorDocument) {
-        this.behavior = behaviorDocument;
-    }
-
-    public InfrastructureDocument getInfrastructure() {
-        return infrastructure;
-    }
-
-    public void setInfrastructure(InfrastructureDocument infrastructureDocument) {
-        this.infrastructure = infrastructureDocument;
+    public void setAnimal(AnimalDocument animal) {
+        this.animal = animal;
     }
 
     public ManagementDocument getManagement() {
         return management;
     }
 
-    public void setManagement(ManagementDocument managementDocument) {
-        this.management = managementDocument;
+    public void setManagement(ManagementDocument management) {
+        this.management = management;
+    }
+
+    public TransportDocument getBehavior() {
+        return behavior;
+    }
+
+    public void setBehavior(TransportDocument behavior) {
+        this.behavior = behavior;
+    }
+
+    public SlaughterDocument getInfrastructure() {
+        return infrastructure;
+    }
+
+    public void setInfrastructure(SlaughterDocument infrastructure) {
+        this.infrastructure = infrastructure;
     }
 }

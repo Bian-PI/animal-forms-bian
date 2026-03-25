@@ -15,6 +15,8 @@ public class AnimalWelfareEvaluationRequestDto {
     private String evaluationDate;
     private String language;
     private String species;
+    @JsonProperty("production_type")
+    private String productionType;
     @JsonProperty("farm_name")
     private String farmName;
     @JsonProperty("farm_location")
@@ -36,12 +38,13 @@ public class AnimalWelfareEvaluationRequestDto {
     public AnimalWelfareEvaluationRequestDto() {
     }
 
-    public AnimalWelfareEvaluationRequestDto(String connectionStatus, String userId, String evaluationDate, String language, String species, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationRequestDto(String connectionStatus, String userId, String evaluationDate, String language, String species, String productionType, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.connectionStatus = connectionStatus;
         this.userId = userId;
         this.evaluationDate = evaluationDate;
         this.language = language;
         this.species = species;
+        this.productionType = productionType;
         this.farmName = farmName;
         this.farmLocation = farmLocation;
         this.evaluatorName = evaluatorName;
@@ -92,6 +95,14 @@ public class AnimalWelfareEvaluationRequestDto {
 
     public void setSpecies(String species) {
         this.species = species;
+    }
+
+    public String getProductionType() {
+        return productionType;
+    }
+
+    public void setProductionType(String productionType) {
+        this.productionType = productionType;
     }
 
     public String getFarmName() {

@@ -1,53 +1,39 @@
 package com.bian.animalformsbian.adapter.driving.http.dto;
 
 public class CategoriesDto {
-    private FeedingDto feeding;
-    private HealthDto health;
-    private BehaviorDto behavior;
-    private InfrastructureDto infrastructure;
+    private ResourceDto resource;
+    private AnimalDto animal;
     private ManagementDto management;
+
+    //Categorias para porcinos
+    private TransportDto transport;
+    private SlaughterDto behavior;
 
     public CategoriesDto() {
     }
 
-    public CategoriesDto(FeedingDto feeding, HealthDto health, BehaviorDto behavior, InfrastructureDto infrastructure, ManagementDto management) {
-        this.feeding = feeding;
-        this.health = health;
-        this.behavior = behavior;
-        this.infrastructure = infrastructure;
+    public CategoriesDto(ResourceDto resource, AnimalDto animal, ManagementDto management, TransportDto transport, SlaughterDto behavior) {
+        this.resource = resource;
+        this.animal = animal;
         this.management = management;
-    }
-
-    public FeedingDto getFeeding() {
-        return feeding;
-    }
-
-    public void setFeeding(FeedingDto feeding) {
-        this.feeding = feeding;
-    }
-
-    public HealthDto getHealth() {
-        return health;
-    }
-
-    public void setHealth(HealthDto health) {
-        this.health = health;
-    }
-
-    public BehaviorDto getBehavior() {
-        return behavior;
-    }
-
-    public void setBehavior(BehaviorDto behavior) {
+        this.transport = transport;
         this.behavior = behavior;
     }
 
-    public InfrastructureDto getInfrastructure() {
-        return infrastructure;
+    public ResourceDto getResource() {
+        return resource;
     }
 
-    public void setInfrastructure(InfrastructureDto infrastructure) {
-        this.infrastructure = infrastructure;
+    public void setResource(ResourceDto resource) {
+        this.resource = resource;
+    }
+
+    public AnimalDto getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(AnimalDto animal) {
+        this.animal = animal;
     }
 
     public ManagementDto getManagement() {
@@ -56,5 +42,21 @@ public class CategoriesDto {
 
     public void setManagement(ManagementDto management) {
         this.management = management;
+    }
+
+    public TransportDto getTransport() {
+        return transport;
+    }
+
+    public void setTransport(TransportDto transport) {
+        this.transport = transport;
+    }
+
+    public SlaughterDto getBehavior() {
+        return behavior;
+    }
+
+    public void setBehavior(SlaughterDto behavior) {
+        this.behavior = behavior;
     }
 }

@@ -6,7 +6,7 @@ public class ManagementDto extends BaseSectionDto {
     public ManagementDto() {
     }
 
-    public ManagementDto(String score, Map<String, String> responses) {
-        super(score, responses);
+    public ManagementDto(String score, String weight, Map<String, String> responses) {
+        super(score, weight, responses);
     }
 }
