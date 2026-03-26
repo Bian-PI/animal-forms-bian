@@ -6,18 +6,18 @@ public class CategoriesDocument {
     private ManagementDocument management;
 
     //Categorias para porcinos
-    private TransportDocument behavior;
-    private SlaughterDocument infrastructure;
+    private TransportDocument transport;
+    private SlaughterDocument slaughter;
 
     public CategoriesDocument() {
     }
 
-    public CategoriesDocument(ResourcesDocument resources, AnimalDocument animal, ManagementDocument management, TransportDocument behavior, SlaughterDocument infrastructure) {
+    public CategoriesDocument(ResourcesDocument resources, AnimalDocument animal, ManagementDocument management, TransportDocument transport, SlaughterDocument slaughter) {
         this.resources = resources;
         this.animal = animal;
         this.management = management;
-        this.behavior = behavior;
-        this.infrastructure = infrastructure;
+        this.transport = transport;
+        this.slaughter = slaughter;
     }
 
     public ResourcesDocument getResources() {
@@ -44,19 +44,19 @@ public class CategoriesDocument {
         this.management = management;
     }
 
-    public TransportDocument getBehavior() {
-        return behavior;
+    public TransportDocument getTransport() {
+        return transport;
     }
 
-    public void setBehavior(TransportDocument behavior) {
-        this.behavior = behavior;
+    public void setTransport(TransportDocument transport) {
+        this.transport = transport;
     }
 
-    public SlaughterDocument getInfrastructure() {
-        return infrastructure;
+    public SlaughterDocument getSlaughter() {
+        return slaughter;
     }
 
-    public void setInfrastructure(SlaughterDocument infrastructure) {
-        this.infrastructure = infrastructure;
+    public void setSlaughter(SlaughterDocument slaughter) {
+        this.slaughter = slaughter;
     }
 }

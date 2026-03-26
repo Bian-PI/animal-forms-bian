@@ -1,5 +1,6 @@
 package com.bian.animalformsbian.domain.usecase;
 
+import com.bian.animalformsbian.adapter.driven.mongo.exception.NoDataFoundException;
 import com.bian.animalformsbian.domain.api.IAnimalServicePort;
 import com.bian.animalformsbian.domain.api.IUserServicePort;
 import com.bian.animalformsbian.domain.model.AnimalWelfareEvaluation;
@@ -40,8 +41,9 @@ public class AnimalUseCase implements IAnimalServicePort {
     public List<AnimalWelfareEvaluation> getReportsForAdmins(Long id) {
         if (userServicePort.isUserAdmin(id))
             return animalPersistencePort.getReportsForAdmins();
-
-        return null;
+        else {
+            throw new NoDataFoundException();
+        }
     }
 
     @Override

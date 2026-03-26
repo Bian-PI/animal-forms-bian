@@ -1,31 +1,31 @@
 package com.bian.animalformsbian.adapter.driving.http.dto;
 
 public class CategoriesDto {
-    private ResourceDto resource;
+    private ResourcesDto resources;
     private AnimalDto animal;
     private ManagementDto management;
 
     //Categorias para porcinos
     private TransportDto transport;
-    private SlaughterDto behavior;
+    private SlaughterDto slaughter;
 
     public CategoriesDto() {
     }
 
-    public CategoriesDto(ResourceDto resource, AnimalDto animal, ManagementDto management, TransportDto transport, SlaughterDto behavior) {
-        this.resource = resource;
+    public CategoriesDto(ResourcesDto resources, AnimalDto animal, ManagementDto management, TransportDto transport, SlaughterDto slaughter) {
+        this.resources = resources;
         this.animal = animal;
         this.management = management;
         this.transport = transport;
-        this.behavior = behavior;
+        this.slaughter = slaughter;
     }
 
-    public ResourceDto getResource() {
-        return resource;
+    public ResourcesDto getResources() {
+        return resources;
     }
 
-    public void setResource(ResourceDto resource) {
-        this.resource = resource;
+    public void setResources(ResourcesDto resources) {
+        this.resources = resources;
     }
 
     public AnimalDto getAnimal() {
@@ -52,11 +52,11 @@ public class CategoriesDto {
         this.transport = transport;
     }
 
-    public SlaughterDto getBehavior() {
-        return behavior;
+    public SlaughterDto getSlaughter() {
+        return slaughter;
     }
 
-    public void setBehavior(SlaughterDto behavior) {
-        this.behavior = behavior;
+    public void setSlaughter(SlaughterDto slaughter) {
+        this.slaughter = slaughter;
     }
 }

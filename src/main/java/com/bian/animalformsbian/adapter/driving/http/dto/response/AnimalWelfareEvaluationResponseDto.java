@@ -16,7 +16,6 @@ public class AnimalWelfareEvaluationResponseDto {
     private String farmName;
     private String farmLocation;
     private String evaluatorName;
-    private String status;
     private String overallScore;
     private String complianceLevel;
     private CategoriesDto categories;
@@ -27,7 +26,7 @@ public class AnimalWelfareEvaluationResponseDto {
     public AnimalWelfareEvaluationResponseDto() {
     }
 
-    public AnimalWelfareEvaluationResponseDto(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String productionType, String farmName, String farmLocation, String evaluatorName, String status, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
+    public AnimalWelfareEvaluationResponseDto(String id, String userId, String evaluationId, String evaluationDate, String language, String species, String productionType, String farmName, String farmLocation, String evaluatorName, String overallScore, String complianceLevel, CategoriesDto categories, List<Map<String, String>> criticalPoints, List<Map<String, String>> strongPoints, List<String> recommendations) {
         this.id = id;
         this.userId = userId;
         this.evaluationId = evaluationId;
@@ -38,7 +37,6 @@ public class AnimalWelfareEvaluationResponseDto {
         this.farmName = farmName;
         this.farmLocation = farmLocation;
         this.evaluatorName = evaluatorName;
-        this.status = status;
         this.overallScore = overallScore;
         this.complianceLevel = complianceLevel;
         this.categories = categories;
@@ -125,14 +123,6 @@ public class AnimalWelfareEvaluationResponseDto {
 
     public void setEvaluatorName(String evaluatorName) {
         this.evaluatorName = evaluatorName;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getOverallScore() {

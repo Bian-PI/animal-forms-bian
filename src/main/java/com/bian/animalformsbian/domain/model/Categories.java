@@ -1,7 +1,7 @@
 package com.bian.animalformsbian.domain.model;
 
 public class Categories {
-    private Resource resource;
+    private Resources resources;
     private Animal animal;
     private Management management;
 
@@ -13,20 +13,20 @@ public class Categories {
     public Categories() {
     }
 
-    public Categories(Resource resource, Animal animal, Management management, Transport transport, Slaughter slaughter) {
-        this.resource = resource;
+    public Categories(Resources resources, Animal animal, Management management, Transport transport, Slaughter slaughter) {
+        this.resources = resources;
         this.animal = animal;
         this.management = management;
         this.transport = transport;
         this.slaughter = slaughter;
     }
 
-    public Resource getResource() {
-        return resource;
+    public Resources getResources() {
+        return resources;
     }
 
-    public void setResource(Resource resource) {
-        this.resource = resource;
+    public void setResources(Resources resources) {
+        this.resources = resources;
     }
 
     public Animal getAnimal() {
