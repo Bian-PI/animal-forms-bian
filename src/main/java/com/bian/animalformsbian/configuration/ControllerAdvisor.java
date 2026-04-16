@@ -1,6 +1,9 @@
 package com.bian.animalformsbian.configuration;
 
 import com.bian.animalformsbian.adapter.driven.mongo.exception.NoDataFoundException;
+import com.bian.animalformsbian.adapter.driving.http.exception.ExternalServiceException;
+import com.bian.animalformsbian.adapter.driving.http.exception.RoleNotAllowedException;
+import com.bian.animalformsbian.adapter.driving.http.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -14,8 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static com.bian.animalformsbian.configuration.Constants.NO_DATA_FOUND_MESSAGE;
-import static com.bian.animalformsbian.configuration.Constants.RESPONSE_ERROR_MESSAGE_KEY;
+import static com.bian.animalformsbian.configuration.Constants.*;
 
 @ControllerAdvice
 public class ControllerAdvisor {
@@ -38,5 +40,23 @@ public class ControllerAdvisor {
     public ResponseEntity<Map<String, String>> handleNoDataFoundException(NoDataFoundException noDataFoundException) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, NO_DATA_FOUND_MESSAGE));
+    }
+
+    @ExceptionHandler(RoleNotAllowedException.class)
+    public ResponseEntity<Map<String, String>> handleRoleNotAllowedException(RoleNotAllowedException roleNotAllowedException) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, ROLE_NOT_ALLOWED_MESSAGE));
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleUserNotFoundException(UserNotFoundException userNotFoundException) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, USER_NOT_FOUND_MESSAGE));
+    }
+
+    @ExceptionHandler(ExternalServiceException.class)
+    public ResponseEntity<Map<String, String>> handleExternalServiceException(ExternalServiceException externalServiceException) {
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, EXTERNAL_SERVICE_ERROR_MESSAGE));
     }
 }

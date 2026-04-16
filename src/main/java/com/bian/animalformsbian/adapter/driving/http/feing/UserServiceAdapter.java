@@ -1,6 +1,10 @@
 package com.bian.animalformsbian.adapter.driving.http.feing;
 
+import com.bian.animalformsbian.adapter.driving.http.exception.ExternalServiceException;
+import com.bian.animalformsbian.adapter.driving.http.exception.RoleNotAllowedException;
+import com.bian.animalformsbian.adapter.driving.http.exception.UserNotFoundException;
 import com.bian.animalformsbian.domain.api.IUserServicePort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,10 +28,15 @@ public class UserServiceAdapter implements IUserServicePort {
     @Override
     public Boolean isUserAdmin(Long userId) {
         try {
-            return feingClient.isAdmin(userId);
-        } catch (Exception e) {
-            // Log error
-            return false;
+            boolean val = feingClient.isAdmin(userId);
+            if (!val) {
+                throw new RoleNotAllowedException();
+            }
+            return true;
+        } catch (FeignException.NotFound e) {
+            throw new UserNotFoundException();
+        } catch (FeignException e) {
+            throw new ExternalServiceException();
         }
     }
 }
