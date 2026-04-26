@@ -1,7 +1,7 @@
-FROM eclipse-temurin:17-jdk-alpine AS build
+FROM gradle:8.14-jdk17-alpine AS build
 WORKDIR /app
 COPY . .
-RUN chmod +x gradlew && ./gradlew clean bootJar --no-daemon -x test
+RUN gradle clean bootJar --no-daemon -x test
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
